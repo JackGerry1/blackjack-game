@@ -1,11 +1,11 @@
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", Arial,
     sans-serif;
+  background-image: url("/images/table.png");
   background-size: cover;
   font-weight: bold;
-  color: white;
+  color: black;
   text-align: center;
-  background-image: url('table.png');
 }
 
 h1 {
