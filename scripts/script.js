@@ -1,20 +1,37 @@
-let firstCard = 10;
-let secondCard = 11;
-let won = false;
+let firstCard = 2;
+let secondCard = 2;
+let hasBlackJack = false;
+let isAlive = true;
+let message = "";
 let sum = firstCard + secondCard;
+let cardsEl = document.getElementById("cards-el");
+let messageEl = document.getElementById("message-el");
+let sumEl = document.getElementById("sum-el");
 
-
-if (sum <= 20) {
-    console.log("draw another card")
+function startGame() {
+  renderGame();
 }
 
-else if (sum == 21) {
-    console.log("win")
-    won = true;
+function renderGame() {
+  cardsEl.textContent = `Card: ${firstCard} ${secondCard}`;
+  sumEl.textContent = ` Sum: ${sum}`;
+
+  if (sum <= 20) {
+    message = "draw another card";
+  } else if (sum == 21) {
+    message = "Y ou've got Blackjack";
+    hasBlackJack = true;
+  } else {
+    message = "You're Busted";
+    isAlive = false;
+  }
+
+  messageEl.textContent = message;
 }
 
-else { 
-    console.log("The sum is less than 21:")
+function newCard() {
+  console.log("drawing new card from the deck");
+  let card = 3;
+  sum += card;
+  renderGame();
 }
-
-console.log(won);
